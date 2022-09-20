@@ -103,7 +103,7 @@ const figureOutWhereToStopTraversing = ({
         Math.round(
           (blockCount > 50
             ? // don't show too much of large content
-              0.9
+              0.25
             : // don't show too little of shorter content
               0.5) * blockCount
         )
