@@ -1,0 +1,65 @@
+@import "./vars";
+@import "./mixins";
+@import "./buy";
+@import "./notion";
+
+.main {
+  padding: 0 0 0;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 6rem;
+  }
+
+  text-align: center;
+  margin-bottom: 6rem;
+
+  .security {
+    display: none;
+  }
+
+  &.spaced-out {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 769px) {
+    .security {
+      color: transparent;
+      transition: $transition;
+      font-size: 15px;
+      top: 6px;
+      position: relative;
+      //color: #888 !important;
+      font-weight: 400;
+      top: 2px;
+      user-select: none;
+      display: block;
+    }
+
+    button {
+
+      &:hover,
+      &:focus,
+      &:active {
+        &+ {
+          .security {
+            color: #888888 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "./pages/Thanks.scss";
+@import "./pages/Landing.scss";
