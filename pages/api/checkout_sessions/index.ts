@@ -21,13 +21,14 @@ export default async function handler(
         mode: "payment",
         line_items: [
           ...[
-            "✅ Full access to the Newbies Guide to Crypto",
-            "✅ 30-day money back gaurantee",
-            "✅ Bonus 1",
-            "✅ Bonus 2"
+            "✅ Full Access to E-Book, Lifetime Updates, Newsletter & Bonuses"
           ].map((chapter) => {
             return {
-              name: chapter
+              name: chapter,
+              // equally distribute across all chapters
+              amount: formatAmountForStripe(amount, currency),
+              currency: "USD",
+              quantity: 1
             };
           })
         ],
